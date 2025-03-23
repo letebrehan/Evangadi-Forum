@@ -4,8 +4,8 @@ import { FaUserCircle } from "react-icons/fa";
 import styles from "./HomePage.module.css";
 import { IoIosArrowDropright } from "react-icons/io";
 import axiosInstance from "../../API/axios";
-import { QuestionContext } from "../../Context/QuestionProvider";
-import { UserContext } from "../../Context/UserProvider";
+import { QuestionContext } from "../../context/QuestionProvider";
+import { UserContext } from "../../context/UserProvider";
 
 const Home = () => {
   const token = localStorage.getItem("token");
@@ -26,13 +26,13 @@ const Home = () => {
       try {
         const response = await axiosInstance.get("/questions/all-questions", {
           headers: {
-            Authorization: Bearer ${token},
+            Authorization: `Bearer ${token}`,
           },
         });
         setQuestions(response.data.questions);
         setLoading(false);
         console.log(response.data.questions);
-      }catch(err) {
+      } catch (err) {
         console.error("Error fetching questions:", err);
         setError(
           err.response?.data?.message || "An error occurred. Please try again."
@@ -126,4 +126,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home;
