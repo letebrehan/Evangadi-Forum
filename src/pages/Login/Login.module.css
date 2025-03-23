@@ -1,0 +1,185 @@
+.loginContainer {
+  justify-content: space-between;
+  display: flex;
+
+  flex: 1;
+}
+
+/* Left Side - Form */
+.leftWrapper {
+  width: 48%;
+  padding: 30px;
+  border-radius: 5px;
+  flex: 1;
+  align-items: center;
+}
+
+.formContainer {
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 0 auto !important;
+}
+
+.formContainer h1 {
+  margin: 10px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.inputGroup {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+}
+
+/* Buttons */
+button {
+  width: 50%;
+  padding: 12px;
+  background-color: #f39228;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #f89123;
+}
+
+button:disabled {
+  background-color: #f39228;
+}
+
+/* Right Side - Image & Text */
+.rightWrapperLogin {
+  width: 48%;
+  max-width: 100%;
+  height: 500px;
+  background-image: url("../../assets//images/loginImage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  background-blend-mode: darken;
+  background-color: #0009;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex: 1;
+}
+
+.overridephoto {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.textContainer {
+  color: #ffffff;
+  width: 40%;
+}
+
+.textContainer span {
+  color: #f39228;
+}
+
+.textContainer h1 {
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.forgotPassword,
+h3 {
+  text-align: right;
+  margin: 10px;
+  font-size: 16px;
+}
+
+.forgotPassword a,
+h3 a {
+  text-decoration: none;
+  color: #f89123;
+}
+
+.forgotPassword a:hover,
+h3 a:hover {
+  text-decoration: underline;
+  color: #f39228;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+  .loginContainer {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .leftWrapper,
+  .rightWrapperLogin {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .formContainer {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .textContainer {
+    width: 80%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .textContainer h1 {
+    font-size: 1.8rem;
+  }
+
+  .inputGroup {
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .overridephoto {
+    max-width: 300px;
+  }
+}
+
+/* Media Query for Extra Small Screens (Mobile Devices) */
+@media (max-width: 480px) {
+  .formContainer h1 {
+    font-size: 1.5rem;
+  }
+
+  .textContainer h1 {
+    font-size: 1.6rem;
+  }
+
+  .inputGroup input {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .forgotPassword,
+  h3 {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 12px;
+  }
+}
