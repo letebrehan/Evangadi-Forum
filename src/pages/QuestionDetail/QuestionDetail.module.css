@@ -1,148 +1,129 @@
-/* Global Styling */
-body {
+/* General Styles */
+.outerDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+  margin: 0 auto;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
+  color: #333;
 }
 
-.container {
-  width: 90%;
-  max-width: 800px;
-  margin: 30px auto;
-}
-
-/* Card Styling */
-.card {
-  /* background: #fff; */
-  padding: 20px;
+/* Question Card */
+.questionCard, .answersCard, .answerCard, .answerFormCard {
+  background: #ffffff;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Question Section */
-.card-title {
-  font-size: 22px;
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cardTitle {
+  font-size: 18px;
   font-weight: bold;
   color: #222;
-  margin-bottom: 10px;
-}
-.card-subtitle {
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 10px;
 }
 
-.card-text {
+.cardSubtitle {
   font-size: 16px;
-  color: #333;
-  line-height: 1.5;
+  color: #0077cc;
+}
+
+.cardText {
+  font-size: 14px;
+  color: #444;
 }
 
 /* Answers Section */
-.info_question {
-  border-left: 4px solid #4caf50;
-  padding: 15px;
-  background-color: #fafafa;
-  border-radius: 5px;
-  margin-top: 10px;
+.answerCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-left: 4px solid #f48024;
 }
 
-/* User Profile Section */
-.user {
-  font-size: 30px;
-  color: #4caf50;
+.answerBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.profileIcon {
+  color: #888;
 }
 
 .username {
   font-weight: bold;
-  font-size: 16px;
-  color: #222;
-  margin-top: 5px;
-}
-
-/* Answer Text */
-.answer-text {
-  font-size: 16px;
   color: #333;
-  line-height: 1.6;
 }
 
-/* Answer Input Section */
-.answer {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.answer h2 {
-  font-size: 20px;
-  color: #222;
-  margin-bottom: 15px;
-}
-
-.form-group {
-  margin-bottom: 85px;
-  height: 150px;
-}
-
-textarea {
-  width: 100%;
+.answerContent {
   padding: 10px;
-  font-size: 16px;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+/* Answer Form */
+.answerFormCard {
+  margin-top: 20px;
+}
+
+.formTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+}
+
+.formGroup {
+  margin-top: 10px;
+}
+
+.quillEditor {
+  min-height: 150px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  resize: vertical;
+  border-radius: 4px;
+  padding: 10px;
+  background: #fff;
 }
 
-textarea:focus {
-  outline: none;
-  border-color: #4caf50;
-}
-
-.invalid {
-  border: 1px solid red;
-}
-
-.error-message {
+.errorMessage {
   color: red;
   font-size: 14px;
   margin-top: 5px;
 }
 
-/* Submit Button */
-.btn-success {
-  background-color: #4caf50;
-  color: #fff;
-  padding: 10px 15px;
-  font-size: 16px;
+.submitButton {
+  margin-top: 10px;
+  background: #f48024;
+  color: white;
   border: none;
-  border-radius: 5px;
+  padding: 10px 15px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s ease;
 }
 
-.btn-success:hover {
-  background-color: #45a049;
+.submitButton:hover {
+  background: #e67e22;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-  .container {
-    width: 95%;
-  }
+/* Links */
+.link {
+  text-decoration: none;
+  color: #0077cc;
+}
 
-  .card {
-    padding: 15px;
-  }
-
-  .card-title {
-    font-size: 20px;
-  }
-
-  .answer h2 {
-    font-size: 18px;
-  }
+.link:hover {
+  text-decoration: underline;
 }

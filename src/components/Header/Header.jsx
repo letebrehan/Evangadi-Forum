@@ -1,41 +1,56 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../../Context/UserProvider";
 import styles from "./Header.module.css";
 import Logo from "../../assets/images/Logo.png";
-import { UserContext } from "../../context/UserProvider";
+import { FiMenu } from "react-icons/fi"; // Menu icon
 
 function Header() {
   const navigate = useNavigate();
-  const { user, setUser } = useContext(UserContext); // Get user state from context
+  const [user, setUser] = useContext(UserContext);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // Log out functionality
   const handleLogOut = () => {
-    localStorage.removeItem("token"); // Remove token from storage
-    setUser(null); // Clear user context
-    navigate("/login"); // Redirect to login page
+    localStorage.removeItem("token");
+    setUser(null);
+    navigate("/users/login");
   };
 
   return (
     <header className={styles.header}>
-      {/* Logo */}
-      <div className={styles.logo}>
-        <img src={Logo} alt="Logo" className={styles.logoImage} />
-      </div>
+      <Link to={"/"}>
+        <div className={styles.logo}>
+          <img src={Logo} alt="Logo" className={styles.logoImage} />
+        </div>
+      </Link>
 
-      {/* Right section with navigation links */}
-      <div className={styles.navLinks}>
+      <button
+        className={styles.menuButton}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <FiMenu size={24} />
+      </button>
+
+      <nav className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}>
         <ul>
           <li>
-            <Link to="/" className={styles.link}>
+            <Link
+              to="/"
+              className={styles.link}
+              onClick={() => setMenuOpen(false)}
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link to="/how-it-works" className={styles.link}>
+            <Link
+              to="/how-it-works"
+              className={styles.link}
+              onClick={() => setMenuOpen(false)}
+            >
               How It Works
             </Link>
           </li>
-
           {user ? (
             <li>
               <button onClick={handleLogOut} className={styles.logoutButton}>
@@ -44,13 +59,17 @@ function Header() {
             </li>
           ) : (
             <li>
-              <Link to="/register" className={styles.link}>
+              <Link
+                to="/users/login"
+                className={styles.link}
+                onClick={() => setMenuOpen(false)}
+              >
                 Login
               </Link>
             </li>
           )}
         </ul>
-      </div>
+      </nav>
     </header>
   );
 }

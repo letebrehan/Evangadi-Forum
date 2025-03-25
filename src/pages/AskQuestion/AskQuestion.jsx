@@ -5,7 +5,7 @@ import "quill/dist/quill.snow.css";
 import Quill from "quill";
 import styles from "./AskQuestion.module.css";
 import { useContext, useEffect, useRef, useState } from "react";
-import { UserContext } from "../../Context/UserProvider";
+import { UserContext } from "../../context/UserProvider";
 import axiosInstance from "../../API/axios";
 import { IoIosArrowDropright } from "react-icons/io";
 import { v4 as uuidv4 } from "uuid";
@@ -25,66 +25,65 @@ function AskQuestion() {
   const quillRef = useRef(null);
   const quillInstance = useRef(null); // Use a ref for Quill instance
 
-useEffect(() => {
-  if (quillRef.current && !quillInstance.current) {
-    quillInstance.current = new Quill(quillRef.current, {
-      theme: "snow",
-      modules: {
-        toolbar: [
-          [{ header: [1, 2, 3, 4, 5, false] }], // Headers
-          [{ font: [] }], // Font selection
-          [{ list: "ordered" }, { list: "bullet" }], // Ordered & Bullet lists
-          ["bold", "italic", "underline", "strike"], // Text styling
-          [{ color: [] }, { background: [] }], // Text color & highlight
-          [{ align: [] }], // Text alignment
-          ["blockquote", "code-block"], // Blockquote & Code block
-          ["link", "image", "video"], // Links, Images, Video
-          [{ script: "sub" }, { script: "super" }], // Subscript & Superscript
-          [{ indent: "-1" }, { indent: "+1" }], // Indent
-          [{ direction: "rtl" }], // Right-to-left text
-          ["clean"], // Remove formatting
-        ],
-      },
+  useEffect(() => {
+    if (quillRef.current && !quillInstance.current) {
+      quillInstance.current = new Quill(quillRef.current, {
+        theme: "snow",
+        modules: {
+          toolbar: [
+            [{ header: [1, 2, 3, 4, 5, false] }], // Headers
+            [{ font: [] }], // Font selection
+            [{ list: "ordered" }, { list: "bullet" }], // Ordered & Bullet lists
+            ["bold", "italic", "underline", "strike"], // Text styling
+            [{ color: [] }, { background: [] }], // Text color & highlight
+            [{ align: [] }], // Text alignment
+            ["blockquote", "code-block"], // Blockquote & Code block
+            ["link", "image", "video"], // Links, Images, Video
+            [{ script: "sub" }, { script: "super" }], // Subscript & Superscript
+            [{ indent: "-1" }, { indent: "+1" }], // Indent
+            [{ direction: "rtl" }], // Right-to-left text
+            ["clean"], // Remove formatting
+          ],
+        },
+      });
+
+      quillInstance.current.root.style.color = "#000"; // Ensure text is visible
+    }
+  }, []);
+
+  const sanitizeContent = (content) =>
+    DOMPurify.sanitize(content, {
+      ALLOWED_TAGS: [
+        "b",
+        "i",
+        "u",
+        "a",
+        "img",
+        "p",
+        "ul",
+        "ol",
+        "li",
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "code",
+        "pre",
+        "blockquote",
+        "strong",
+        "em",
+        "hr",
+        "br",
+        "sub",
+        "sup",
+        "mark",
+        "video",
+        "iframe",
+        "span",
+      ],
+      ALLOWED_ATTR: ["href", "src", "alt", "title", "style"],
     });
-
-    quillInstance.current.root.style.color = "#000"; // Ensure text is visible
-  }
-}, []);
-
-
-const sanitizeContent = (content) =>
-  DOMPurify.sanitize(content, {
-    ALLOWED_TAGS: [
-      "b",
-      "i",
-      "u",
-      "a",
-      "img",
-      "p",
-      "ul",
-      "ol",
-      "li",
-      "h1",
-      "h2",
-      "h3",
-      "h4",
-      "h5",
-      "code",
-      "pre",
-      "blockquote",
-      "strong",
-      "em",
-      "hr",
-      "br",
-      "sub",
-      "sup",
-      "mark",
-      "video",
-      "iframe",
-      "span",
-    ],
-    ALLOWED_ATTR: ["href", "src", "alt", "title", "style"],
-  });
 
   const handleClick = async (data) => {
     let description = quillInstance.current.root.innerHTML.trim(); // Use quillInstance to get content
@@ -93,9 +92,9 @@ const sanitizeContent = (content) =>
       return;
     }
     description = sanitizeContent(description);
-const question_id = uuidv4();
+    const question_id = uuidv4();
     setLoading(true);
-    console.log(user)
+    console.log(user);
     try {
       await axiosInstance.post(
         "/questions/post-question",

@@ -9,9 +9,9 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	text-align: center;
+     padding-bottom: 200px;
 }
 a {
-     /* color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1)); */
      text-decoration: underline;
 }
 

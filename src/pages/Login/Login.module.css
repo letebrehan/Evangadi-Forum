@@ -98,24 +98,30 @@ button:disabled {
   margin: 10px 0;
 }
 
-.forgotPassword,
-h3 {
+.forgot__password {
   text-align: right;
   margin: 10px;
   font-size: 16px;
 }
 
-.forgotPassword a,
-h3 a {
+.forgot__password a,
+forgot__assword h3 a {
   text-decoration: none;
   color: #f89123;
 }
 
-.forgotPassword a:hover,
-h3 a:hover {
+.forgot__password a:hover,
+forgot__assword h3 a:hover {
   text-decoration: underline;
   color: #f39228;
 }
+
+.directToRegister {
+ color: #ff7300
+}
+
+
+
 
 /* Media Query for Smaller Screens */
 @media (max-width: 768px) {
@@ -183,3 +189,4 @@ h3 a:hover {
     padding: 12px;
   }
 }
+

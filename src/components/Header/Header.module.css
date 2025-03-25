@@ -1,6 +1,6 @@
-/* Styles for the header component */
+/* Header Styles */
 .header {
-  position: sticky;
+position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -15,67 +15,116 @@
   box-shadow: 0 2px 4px #516b9829;
 }
 
+/* Logo */
 .logo {
-  flex: 0;
+  display: flex;
+  align-items: center;
 }
 
 .logoImage {
-  height: 40px;
+  height: 45px;
+  transition: transform 0.3s ease-in-out;
 }
 
+.logoImage:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation */
 .navLinks {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
 }
 
 .navLinks ul {
   display: flex;
   list-style: none;
+  margin: 0;
   padding: 0;
 }
 
 .navLinks li {
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
 .link {
   text-decoration: none;
-  color: rgb(23, 10, 90);
+  color: #170a5a;
   font-size: 16px;
-  cursor: pointer;
+  font-weight: 500;
   transition: color 0.3s ease-in-out;
 }
 
 .link:hover {
-  text-decoration: underline;
   color: #1a237e;
+  text-decoration: underline;
+}
+
+/* Logout Button */
+.logoutButton {
+  background: #d32f2f;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease-in-out;
+}
+
+.logoutButton:hover {
+  background: #b71c1c;
+}
+
+/* Menu Button for Mobile */
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  width: 15%;
+  color: orange;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .header {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 10px; /* Adjust padding on smaller screens */
+    flex-direction: row;
     text-align: center;
-   
+    padding: 15px;
+    /* width: 80%; */
+  }
+  .logoutButton {
+    width: 20%;
   }
 
   .logoImage {
-    height: 35px; /* Slightly reduce logo size on smaller screens */
+    height: 30px;
+  }
+
+  .menuButton {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
   }
 
   .navLinks {
     width: 100%;
-    display: flex;
-    justify-content: center;
+    display: none;
+    flex-direction: column;
+    align-items: center;
     margin-top: 10px;
+  }
+
+  .navLinks.open {
+    display: flex;
   }
 
   .navLinks ul {
     flex-direction: column;
-    align-items: center;
-    padding-left: 0;
+    width: 100%;
   }
 
   .navLinks li {
@@ -83,24 +132,20 @@
   }
 
   .link {
-    font-size: 14px; /* Reduce font size for mobile devices */
+    font-size: 15px;
   }
 }
 
 @media (max-width: 480px) {
   .header {
-    padding: 10px 5px; /* Further reduce padding on very small screens */
+    padding: 10px;
   }
 
   .logoImage {
-    height: 30px; /* Further reduce logo size */
-  }
-
-  .navLinks {
-    margin-top: 8px;
+    height: 35px;
   }
 
   .link {
-    font-size: 13px; /* Further reduce font size for very small screens */
+    font-size: 14px;
   }
 }

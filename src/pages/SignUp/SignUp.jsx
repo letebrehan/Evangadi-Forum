@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../../API/axios";
 import styles from "./SignUp.module.css";
 
-import topImage from "../../assets/images/top.svg";
+import topImage from "../../assets/images/DarkLogo.png";
 
 function Register() {
   const navigate = useNavigate();
@@ -168,13 +168,20 @@ function Register() {
             </Link>
           </h3>
           <h3>
-            Already have an account? <Link to={"users/login"}>Log in</Link>
+            Already have an account? <Link to={"/users/login"}>Log in</Link>
           </h3>
         </div>
       </div>
       {/* about and image  */}
       <div className={styles.rightWrapper}>
-        <img src={topImage} alt="Access top courses and job training" />
+        <svg width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M0 40C25.4247 40 40 25.4247 40 0C40 25.4247 54.5753 40 80 40C54.5753 40 40 54.5753 40 80C40 54.5753 25.4247 40 0 40Z"
+            fill="#F39228"
+          ></path>
+        </svg>
 
         <div className={styles.textContainer}>
           <h1>
