@@ -38,20 +38,6 @@ const Home = () => {
     })();
   }, [token, setQuestions]);
 
-  // const handleDelete = async (question_id) => {
-  //   try {
-  //     await axiosInstance.delete(`/questions/${question_id}`, {
-  //       headers: { Authorization: `Bearer ${token}` },
-  //     });
-  //     setQuestions((prevQuestions) =>
-  //       prevQuestions.filter((question) => question.question_id !== question_id)
-  //     );
-  //   } catch (err) {
-  //     console.error("Error deleting question:", err);
-  //     alert("Failed to delete the question.");
-  //   }
-  // };
-
   const handleEdit = (question_id) => {
     navigate(`/questions/update/${question_id}`);
   };

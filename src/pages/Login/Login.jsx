@@ -96,7 +96,11 @@ function Login() {
 
           <h3>
             Don't have an account?{" "}
-            <Link className={styles["text-pr"]} to="/users/register">
+            <Link
+              className={styles["text-pr"]}
+              style={{ color: "orange" }}
+              to="/users/register"
+            >
               Sign up
             </Link>
           </h3>

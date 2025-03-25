@@ -4,6 +4,9 @@
     flex: 1;
     flex-wrap: wrap; /* Allows wrapping of elements on smaller screens */
 }
+.registerContainer a{
+    color: #F39228;
+}
 
 .leftwrapper {
     width: 48%;

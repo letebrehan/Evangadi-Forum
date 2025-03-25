@@ -12,6 +12,7 @@
   width: 100%;
   bottom: 0;
   flex-direction: column; 
+  height: 200px;
 }
 
 .internalWrapper {
