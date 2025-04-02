@@ -1,7 +1,7 @@
 .loginContainer {
   justify-content: space-between;
   display: flex;
-
+  align-items: center;
   flex: 1;
 }
 
@@ -10,13 +10,13 @@
   width: 48%;
   padding: 30px;
   border-radius: 5px;
+  
   flex: 1;
   align-items: center;
 }
 
 .formContainer {
-  max-width: 400px;
-  padding: 20px;
+  padding: 10px;
   border-radius: 8px;
   margin: 0 auto !important;
 }
@@ -99,7 +99,7 @@ button:disabled {
 }
 
 .forgot__password {
-  text-align: right;
+  text-align: center;
   margin: 10px;
   font-size: 16px;
 }
@@ -124,9 +124,26 @@ forgot__assword h3 a:hover {
   color: #ff7300;
 }
 
-
+.submitButton {
+  width: 60%;
+}
+.register{
+  width: 90%;
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 /* Media Query for Smaller Screens */
 @media (max-width: 768px) {
+  .leftWrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px;
+  }
   .loginContainer {
     flex-direction: column;
     justify-content: center;
@@ -139,8 +156,12 @@ forgot__assword h3 a:hover {
   }
 
   .formContainer {
-    max-width: 100%;
+    /* max-width: 100%; */
     padding: 15px;
+  }
+
+  .rightWrapperLogin {
+    display: none;
   }
 
   .textContainer {
@@ -155,8 +176,12 @@ forgot__assword h3 a:hover {
 
   .inputGroup {
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
   }
-
+.inputGroup input {
+  width: 80% !important;
+}
   button {
     width: 100%;
     padding: 14px;
@@ -191,4 +216,3 @@ forgot__assword h3 a:hover {
     padding: 12px;
   }
 }
-

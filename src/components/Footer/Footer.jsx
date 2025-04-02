@@ -38,7 +38,7 @@ function Footer() {
 
         <div className={style.linksSection}>
           {/* Useful links */}
-          <ul className={style.linksList}>
+          {/* <ul className={style.linksList}>
             <h3>Useful Links</h3>
             <li>
               <a href="/">Home</a>
@@ -49,15 +49,17 @@ function Footer() {
             <li>
               <a href="/contact">Contact Us</a>
             </li>
-          </ul>
+          </ul> */}
 
           {/* Contact Info */}
-          <ul className={style.contactInfo}>
+          <div className={style.contactInfo}>
             <h3>Contact Info</h3>
-            <li>Evangadi Networks </li>
-            <li> support@evangadi.com </li>
-            <li> +1-202-386-2702 </li>
-          </ul>
+            <ul className={style.contactList}>
+              <li>Evangadi Networks </li>
+              <li> support@evangadi.com </li>
+              <li> +1-202-386-2702 </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

@@ -93,12 +93,42 @@
     margin-top: 20px;
 }
 
+.loadingContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
 /* Questions list */
 .questionsList {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  width: 10%;
+  border: none;
+  background-color: #36d7b7;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.pagination button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
 
 /* Question card */
 .cardWrapper {
@@ -113,6 +143,7 @@
     position: relative;
     width: 90%;
     margin: 0 auto;
+    cursor: pointer;
 }
 
 .cardWrapper:hover {
@@ -265,6 +296,8 @@
 .arrowIcon {
     font-size: 22px;
     color: #f48024;
+    width: 100%;
+    cursor: pointer;
 }
 
 .arrowIcon:hover {

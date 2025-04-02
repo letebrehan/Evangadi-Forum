@@ -52,3 +52,28 @@
     color: red;
     text-align: center;
   }
+
+  .buttonGroup{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  .submitButton, .discardButton {
+    width: 25%;
+  }
+
+  @media (max-width: 768px) {
+    .buttonGroup {
+      flex-direction: column;
+      align-items: center;
+    }
+   .submitButton, .discardButton {
+    width: 30%;
+  }
+  }
+
+  @media (max-width: 480px) {
+   .submitButton, .discardButton {
+    width: 50%;
+  }
+  }

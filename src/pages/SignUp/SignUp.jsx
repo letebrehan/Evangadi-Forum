@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../../API/axios";
 import styles from "./SignUp.module.css";
+import { ClipLoader } from "react-spinners";
 
-import topImage from "../../assets/images/DarkLogo.png";
 
 function Register() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     user_name: "",
-    firs_tname: "",
+    first_name: "",
     last_name: "",
     email: "",
     password: "",
@@ -140,13 +140,18 @@ function Register() {
             {successMessage && (
               <div className={styles.success}>{successMessage}</div>
             )}
-
             <button
               type="submit"
               className={styles.submitButton}
               disabled={loading}
             >
-              {loading ? "Registering..." : "Agree and Join"}
+              {loading ? (
+                <>
+                  <ClipLoader size={20} color="#36d7b7" /> Registering...
+                </>
+              ) : (
+                "Agree and Join"
+              )}
             </button>
           </form>
           <h3 className={styles.terms}>
@@ -176,8 +181,8 @@ function Register() {
       <div className={styles.rightWrapper}>
         <svg width="80" height="80" xmlns="http://www.w3.org/2000/svg">
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M0 40C25.4247 40 40 25.4247 40 0C40 25.4247 54.5753 40 80 40C54.5753 40 40 54.5753 40 80C40 54.5753 25.4247 40 0 40Z"
             fill="#F39228"
           ></path>

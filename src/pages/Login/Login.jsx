@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styles from "./Login.module.css";
 import { Link, useNavigate } from "react-router-dom";
-import topImage from "../../assets/images/DarkLogo.png";
+import { UserContext } from "../../Context/UserProvider"; // Import UserContext
 import axiosInstance from "../../API/axios";
+import { ClipLoader } from "react-spinners";
 
 function Login() {
   const navigate = useNavigate();
+  const [user, setUser] = useContext(UserContext); // Access and update UserContext
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -39,8 +41,11 @@ function Login() {
       setSuccessMessage(response.data.msg);
 
       localStorage.setItem("token", response.data.token);
+      setUser({ token: response.data.token }); // Update the UserContext
+
       navigate("/home");
     } catch (error) {
+      console.error("Login error:", error);
       setError(
         error.response?.data?.msg || "Something went wrong! Please try again."
       );
@@ -82,7 +87,7 @@ function Login() {
             )}
 
             <h3 className={styles.forgot__password}>
-              <Link to="/forgot-password">Forgot your password?</Link>
+              <Link to="/forget-password">Forgot your password?</Link>
             </h3>
 
             <button
@@ -90,11 +95,18 @@ function Login() {
               className={styles.submitButton}
               disabled={loading}
             >
-              {loading ? "Logging in..." : "Log in"}
+              {loading ? (
+                <>
+                  <ClipLoader size={20} color="#36d7b7" />
+                  Logging in...
+                </>
+              ) : (
+                "Log in"
+              )}
             </button>
           </form>
 
-          <h3>
+          <h3 >
             Don't have an account?{" "}
             <Link
               className={styles["text-pr"]}
@@ -107,13 +119,12 @@ function Login() {
         </div>
       </div>
 
-      {/* About and image section */}
       <div className={styles.rightWrapperLogin}>
         <div className={styles.overridephoto}>
           <svg width="80" height="80" xmlns="http://www.w3.org/2000/svg">
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M0 40C25.4247 40 40 25.4247 40 0C40 25.4247 54.5753 40 80 40C54.5753 40 40 54.5753 40 80C40 54.5753 25.4247 40 0 40Z"
               fill="#F39228"
             ></path>

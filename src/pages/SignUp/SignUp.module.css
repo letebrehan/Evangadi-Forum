@@ -126,46 +126,9 @@ button:disabled {
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
-    .registerContainer {
-        flex-direction: column; 
-    }
 
-    .leftwrapper, .rightWrapper {
-        width: 100%; 
-        padding: 20px 0;
-    }
-
-    .formContainer {
-        width: 90%; 
-    }
-
-    .rightWrapper h1 {
-        font-size: 24px;
-    }
-
-    .rightWrapper h4 {
-        font-size: 16px;
-    }
-
-    .textContainer {
-        width: 90%; 
+    .rightWrapper {
+        display: none;
     }
 }
 
-@media (max-width: 480px) {
-    .rightWrapper h1 {
-        font-size: 20px; 
-    }
-
-    .rightWrapper h4 {
-        font-size: 14px; 
-    }
-
-    .rightWrapper img {
-        margin-right: 0; 
-    }
-
-    .rightWrapper span {
-        font-size: 25px; 
-    }
-}

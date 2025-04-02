@@ -1,8 +1,6 @@
 /* Footer styles */
 .footer {
-  position: relative;
   background-color: #23262A;
-  padding: 15px 10px;
   min-height: 80px;
   color: #c1c1c1;
   display: flex;
@@ -12,7 +10,8 @@
   width: 100%;
   bottom: 0;
   flex-direction: column; 
-  height: 200px;
+  height: auto;
+  /* margin-top: 20px; */
 }
 
 .internalWrapper {
@@ -20,16 +19,27 @@
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+  align-items: center;
 }
 
 .logoSection {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.contactList {
+  display: flex;
+  gap: 20px;
+  list-style: none;
 }
 
 .logo {
-  height: 30px;
+  height: 1.25rem;
+  width: 18rem;
   width: auto;
-  margin: 10px auto;
 }
 
 .logo img {
@@ -65,8 +75,8 @@ h3 {
 }
 
 li {
-  margin-bottom: 5px;
-  padding: 2px 0;
+  /* margin-bottom: 5px; */
+  padding: 5px 0;
   opacity: 0.8;
 }
 
@@ -85,55 +95,66 @@ a:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
   .footer {
+    height: auto;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 20px 15px; 
+    padding: 10px 0px; 
+  }
+  .contactList{
+    justify-content: center;
   }
 
   .logo {
-    height: 30px; /* Adjust logo size */
+    height: 30px;
   }
 
   .linksSection {
     flex-direction: column;
     align-items: center;
     padding-left: 0;
-    width: 100%; /* Ensure the links section takes full width on mobile */
+    width: 100%;
   }
 
   .linksList, .contactInfo {
-    padding: 10px 0;
-    width: 100%; /* Ensure lists take full width */
+    width: 100%; 
   }
 
   .socialLinks {
-    gap: 15px; /* Slightly reduce gap for better spacing on smaller screens */
+    gap: 15px;
+  }
+  .socialLinks svg {
+    width: 1.25rem;
   }
 
   li {
-    font-size: 14px; /* Slightly reduce font size for better readability */
+    font-size: 14px;
   }
 
   h3 {
-    font-size: 18px; /* Adjust heading size for mobile view */
-    margin-bottom: 8px; /* Reduce margin for compact design */
+    font-size: 18px;
+    margin-bottom: 8px;
   }
 
   .internalWrapper {
     flex-direction: column;
     align-items: center;
-    width: 100%; /* Ensure full width on smaller screens */
+    width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .footer {
-    padding: 20px 10px; /* Adjust footer padding for mobile devices */
+    /* padding: 20px 10px; */
   }
-
+.contactList{
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+}
   .logo {
-    height: 25px; /* Further reduce logo size for smaller screens */
+    height: 15px;
   }
 
   .linksSection {
@@ -143,18 +164,17 @@ a:hover {
   }
 
   .socialLinks {
-    gap: 10px; /* Tighten gap further for mobile */
-  }
+    margin-top: 5px;
+    display: flex;
 
-  .linksList, .contactInfo {
-    padding: 8px 0;
+    gap: 10px;
   }
 
   li {
-    font-size: 13px; /* Reduce font size for compact mobile design */
+    font-size: 13px; 
   }
 
   h3 {
-    font-size: 16px; /* Adjust heading size for very small screens */
+    font-size: 16px; 
   }
 }

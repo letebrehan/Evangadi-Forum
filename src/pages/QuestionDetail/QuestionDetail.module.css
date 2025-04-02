@@ -10,7 +10,10 @@
 }
 
 /* Question Card */
-.questionCard, .answersCard, .answerCard, .answerFormCard {
+.questionCard,
+.answersCard,
+.answerCard,
+.answerFormCard {
   background: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -46,6 +49,7 @@
   flex-direction: column;
   gap: 10px;
   border-left: 4px solid #f48024;
+  position: relative;
 }
 
 .answerBody {
@@ -126,4 +130,59 @@
 
 .link:hover {
   text-decoration: underline;
+}
+
+/* Buttons */
+.actionButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.editBtn,
+.deleteBtn {
+  padding: 8px 12px;
+  font-size: 14px;
+  width: 50%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.editBtn {
+  background-color: #0074cc;
+  color: white;
+}
+
+.editBtn:hover {
+  background-color: #005fa3;
+}
+
+.deleteBtn {
+  background-color: #d9534f;
+  color: white;
+}
+
+.deleteBtn:hover {
+  background-color: #c9302c;
+}
+
+.btnContainer {
+  position: absolute;
+  left: 80%;
+  top: 70%;
+}
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+@media (max-width: 768px) {
+  .btnContainer {
+    /* position: relative; */
+    left: 40%;
+    top: 70%;
+  }
 }

@@ -114,7 +114,9 @@
   border-radius: 8px;
   font-size: 1.1rem;
   cursor: pointer;
-  width: 60%; 
+  width: 20%;
+  display: flex;
+  justify-content: center; 
   transition: background-color 0.3s ease;
 }
 
@@ -174,16 +176,27 @@
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
+/* .container{
+  flex-direction: column;
+} */
+
   .askQuestion {
       padding: 20px;
       width: 90%;
   }
 
   .submitButton {
-      width: 100%; 
+      /* width: 100%;  */
   }
 
   .editorWrapper {
       height: 350px;
   }
+}
+
+@media (max-width: 720px) {
+.container{
+  flex-direction: column;
+}
+
 }
