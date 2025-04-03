@@ -1,13 +1,8 @@
 import React from "react";
 import classes from "./LandingPage.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function LandingPage() {
-  const navigate = useNavigate();
-
-  function ToLogIn() {
-    navigate(".users/login");
-  }
   return (
     <div>
       <div className={classes.background}>
@@ -20,12 +15,12 @@ function LandingPage() {
             forward and join the new digital era.
           </p>
           <div className={classes.linkDiv}>
-            <a className={classes.createAccount} href="/users/register">
+            <Link className={classes.createAccount} to="/users/register">
               Create Account
-            </a>
-            <a className={classes.signIn} href="/users/login">
+            </Link>
+            <Link className={classes.signIn} to="/users/login">
               Sign In
-            </a>
+            </Link>
           </div>
         </div>
       </div>
