@@ -80,7 +80,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter basename="/Evangadi-Forum">
+    <>
       <Header />
 
       <Routes>
@@ -145,7 +145,7 @@ function App() {
         />
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </>
   );
 }
 
