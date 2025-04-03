@@ -5,6 +5,7 @@
     padding: 20px;
     background-color: #f9f9f9;
     font-family: "Arial", sans-serif;
+    
 }
 
 /* Header section */
@@ -115,7 +116,7 @@
 }
 
 .pagination button {
-  padding: 8px 12px;
+  padding: .5rem .75rem;
   width: 10%;
   border: none;
   background-color: #36d7b7;
@@ -132,7 +133,7 @@
 
 /* Question card */
 .cardWrapper {
-    background-color: white;
+    /* background-color: rgba(113, 111, 111, 0.123); */
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -309,18 +310,24 @@
     height: auto;
 }
 
+.descriptionDiv {
+    font-size: 1rem !important;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .homeHeader {
         flex-direction: column;
         text-align: center;
     }
-
+.pagination button {
+    width: 20%;
+}
     .askQuestionBtn {
         width: 80%;
         max-width: 300px;
     }
-
+    
     .cardWrapper {
         padding: 15px;
     }
@@ -348,8 +355,38 @@
     }
     .btnContainer {
         /* position: relative; */
-        left: 40%;
-        top: 70%;
+        left: 70%;
+        top: 30%;
+        
+    }
+    .descriptionDiv {
+    font-size: .75rem !important;
+}
+}
+
+@media (max-width: 480px) {
+    .btnContainer {
+        /* position: relative; */
+        left: 60%;
+        top: 10%;
 
     }
+    .userCard{
+        position: absolute;
+        width: 50%;
+        left: 0%;
+        /* top: 10%; */
+    }
+    .time {
+    position: absolute;
+    top: -50%;
+    left: 10%;
+    font-size: .8rem;
+}
+.descriptionDiv {
+    font-size: .5rem !important;
+}
+.pagination button {
+    width: 25%;
+}
 }

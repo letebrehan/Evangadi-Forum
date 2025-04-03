@@ -372,8 +372,8 @@ const Home = () => {
                       {question.title}
                     </Link>
                   </h3>
-                  <div style={{ marginBottom: "5px" }}>
-                    <div
+                  <div>
+                    <div className={styles.descriptionDiv}
                       dangerouslySetInnerHTML={{
                         __html: DOMPurify.sanitize(
                           question?.question_description

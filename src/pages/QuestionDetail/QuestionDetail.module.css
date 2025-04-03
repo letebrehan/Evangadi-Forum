@@ -99,7 +99,12 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 10px;
-  background: #fff;
+  color: orange;
+  background: black;
+}
+
+.questDiv{
+  font-size: .9rem;
 }
 
 .errorMessage {
@@ -185,4 +190,16 @@
     left: 40%;
     top: 70%;
   }
+  .questDiv{
+  font-size: .7rem;
+}
+}
+
+@media (max-width: 480px) {
+ .questDiv{
+  font-size: .5rem;
+}
+.cardTitle{
+  font-size: 1rem;
+}
 }

@@ -23,11 +23,11 @@ function EditAnswer() {
   useEffect(() => {
     const fetchAnswer = async () => {
       try {
-        const response = await axiosInstance.get(`/answers/${answer_id}`, {
+        const response = await axiosInstance.get(`/answer/${answer_id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         console.log(response);
-        const sanitizedContent = DOMPurify.sanitize(response.data.answer);
+        const sanitizedContent = DOMPurify.sanitize(response.data.answer.answer);
         console.log(sanitizedContent);
         setEditorContent(sanitizedContent);
         setOriginalContent(sanitizedContent);
@@ -69,15 +69,32 @@ function EditAnswer() {
     }
   }, [editorContent]);
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     await axiosInstance.put(
+  //       /answers/update/${answer_id},
+  //       { answer: editorContent },
+  //       { headers: { Authorization: Bearer ${token} } }
+  //     );
+  //     navigate(-1);
+  //   } catch (err) {
+  //     console.log(err.message);
+  //     setError("Failed to update answer.");
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await axiosInstance.put(
-        `/answers/update/${answer_id}`,
+        `/answer/update/${answer_id}`,
         { answer: editorContent },
-        { headers: { Authorization: `Bearer ${token}` } }
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
       );
-      navigate(-1);
+      navigate(-1); // Go back after successful update
     } catch (err) {
       console.log(err.message);
       setError("Failed to update answer.");

@@ -111,7 +111,10 @@ function QuestionDetail() {
       });
 
       // Ensure that text is visible
-      quillInstance.current.root.style.color = "#000";
+      // quillInstance.current.root.style.color = "#000";
+      // const quillRoot = quillInstance.current.root;
+      // quillRoot.style.color = "red"; // Set default text color
+      // quillRoot.style.backgroundColor = '#eab5af'; // Set default background color
     }
   }, [loading]);
 
@@ -259,6 +262,7 @@ function QuestionDetail() {
             <h5 className={styles.cardSubtitle}>{question?.title}</h5>
             {/* <p>{question?.question_description}</p> */}
             <div
+              className={styles.questDiv}
               dangerouslySetInnerHTML={{
                 __html: DOMPurify.sanitize(question?.question_description),
               }}
@@ -331,7 +335,11 @@ function QuestionDetail() {
             <div className={styles.formGroup}>
               <div
                 ref={quillRef}
-                style={{ display: loading ? "none" : "block" }}
+                style={{
+                  display: loading ? "none" : "block",
+                  backgroundColor: "#cccccc",
+                  color: "red",
+                }}
               ></div>
               {errors.answer && (
                 <div className={styles.errorMessage}>
@@ -344,11 +352,7 @@ function QuestionDetail() {
               className={styles.submitButton}
               disabled={loading}
             >
-              {loading ? (
-                <ClipLoader size={20} color="#36d7b7" />
-              ) : (
-                <>Post Your Answer</>
-              )}
+              <>Post Your Answer</>
             </button>
           </form>
         </div>

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../../Context/UserProvider";
 import styles from "./Header.module.css";
 import Logo from "../../assets/images/DarkLogo.png";
@@ -7,6 +7,7 @@ import { FiMenu } from "react-icons/fi"; // Menu icon
 
 function Header() {
   const navigate = useNavigate();
+  const location = useLocation()
   const [user, setUser] = useContext(UserContext);
   const [menuOpen, setMenuOpen] = useState(false);
   const token = localStorage.getItem("token"); // Retrieve token from localStorage
@@ -69,15 +70,18 @@ function Header() {
                 </button>
               </li>
             ) : (
-              <li>
-                <Link
-                  to="/users/login"
-                  className={`${styles.link} ${styles["sign-in--btn"]}`}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Login
-                </Link>
-              </li>
+              location.pathname !== "/users/login" &&
+              location.pathname !== "/users/register" && (
+                <li>
+                  <Link
+                    to="/users/login"
+                    className={`${styles.link} ${styles["sign-in--btn"]}`}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    Login
+                  </Link>
+                </li>
+              )
             )}
           </ul>
         </nav>

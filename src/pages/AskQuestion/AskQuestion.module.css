@@ -106,7 +106,7 @@
   justify-content: center;
 }
 
-.submitButton {
+.postQuestion {
   background-color: #f29c08e9;
   color: white;
   padding: 12px 10px;
@@ -114,17 +114,17 @@
   border-radius: 8px;
   font-size: 1.1rem;
   cursor: pointer;
-  width: 20%;
+  width: 40%;
   display: flex;
   justify-content: center; 
   transition: background-color 0.3s ease;
 }
 
-.submitButton:hover {
+.postQuestion:hover {
   background-color: #0056b3;
 }
 
-.submitButton:disabled {
+.postQuestion:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
 }

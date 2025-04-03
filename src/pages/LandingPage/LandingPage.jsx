@@ -11,7 +11,7 @@ function LandingPage() {
   return (
     <div>
       <div className={classes.background}>
-        <div style={{ marginTop: "30%" }}>
+        <div className={classes.textDiv}>
           <h2>
             Bypass the Industrial, <br /> Dive into the Digital!
           </h2>
@@ -19,7 +19,7 @@ function LandingPage() {
             Before us is a golden opportunity, demanding us to take a bold step
             forward and join the new digital era.
           </p>
-          <div>
+          <div className={classes.linkDiv}>
             <a className={classes.createAccount} href="/users/register">
               Create Account
             </a>

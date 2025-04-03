@@ -7,13 +7,14 @@
   z-index: 9999;
   color: #fff;
   background-color: #191919;
-  min-height: 75px;
+  min-height: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   box-shadow: 0 2px 4px #516b9829;
+  padding: 0px 2rem;
 }
 
 /* When scrolled, change background */

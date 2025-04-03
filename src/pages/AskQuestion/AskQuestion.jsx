@@ -187,7 +187,7 @@ function AskQuestion() {
 
           <button
             type="submit"
-            className={styles.submitButton}
+            className={styles.postQuestion}
             disabled={loading}
           >
             {loading ? <>Posting...</> : <>Post Your Question</>}
