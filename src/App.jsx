@@ -1,6 +1,12 @@
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "./Context/UserProvider"; // Adjust the import path
-import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
+import {
+  Route,
+  Routes,
+  Navigate,
+  useNavigate,
+  BrowserRouter,
+} from "react-router-dom";
 import axiosInstance from "./API/axios";
 import ProtectedRoute from "./context/ProtectedRoutes";
 import Header from "./components/Header/Header";
@@ -74,8 +80,9 @@ function App() {
   }
 
   return (
-    <>
+    <BrowserRouter basename="/Evangadi-Forum">
       <Header />
+
       <Routes>
         <Route
           path="/"
@@ -138,7 +145,7 @@ function App() {
         />
       </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 
