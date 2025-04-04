@@ -1,15 +1,16 @@
 /* Footer styles */
 .footer {
-  background-color: #23262A;
+  background-color: #23262a;
   min-height: 80px;
   color: #c1c1c1;
   display: flex;
   align-items: center;
   text-align: center;
-  margin: 0 auto;
+  margin: auto;
+  margin-top: auto;
   width: 100%;
   bottom: 0;
-  flex-direction: column; 
+  flex-direction: column;
   height: auto;
   padding-top: 1rem;
 }
@@ -58,7 +59,6 @@
   display: flex;
   justify-content: space-around;
   flex: 1;
-
 }
 
 .linksList,
@@ -66,7 +66,6 @@
   list-style: none;
   padding: 0;
   text-align: center;
-  
 }
 
 h3 {
@@ -99,9 +98,9 @@ a:hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 10px 0px; 
+    padding: 10px 0px;
   }
-  .contactList{
+  .contactList {
     justify-content: center;
   }
 
@@ -116,8 +115,9 @@ a:hover {
     width: 100%;
   }
 
-  .linksList, .contactInfo {
-    width: 100%; 
+  .linksList,
+  .contactInfo {
+    width: 100%;
   }
 
   .socialLinks {
@@ -147,12 +147,12 @@ a:hover {
   .footer {
     /* padding: 20px 10px; */
   }
-.contactList{
-  flex-direction: column;
-  gap: 0px;
-  align-items: center;
-  justify-content: center;
-}
+  .contactList {
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+  }
   .logo {
     height: 15px;
   }
@@ -171,10 +171,10 @@ a:hover {
   }
 
   li {
-    font-size: 13px; 
+    font-size: 13px;
   }
 
   h3 {
-    font-size: 16px; 
+    font-size: 16px;
   }
 }
