@@ -1,14 +1,18 @@
+/* Make sure root elements stretch full height */
 html, body, #root {
   height: 100%;
   margin: 0;
+  padding: 0;
 }
 
-.app-wrapper {
+/* Layout container */
+.app-layout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.app-wrapper > .routes {
+/* The area that should grow to push the footer down */
+.app-content {
   flex: 1;
 }

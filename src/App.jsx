@@ -82,67 +82,68 @@ function App() {
   return (
     <div div className="app-wrapper">
       <Header />
-      <Routes>
-        <Route
-          path="/"
-          element={token ? <Navigate to="/home" /> : <LandingPage />}
-        />
-        <Route
-          path="/users/login"
-          element={token ? <Navigate to="/home" /> : <Login />}
-        />
-        <Route
-          path="/users/register"
-          element={token ? <Navigate to="/home" /> : <SignUp />}
-        />
-        <Route
-          path="/forget-password"
-          element={token ? <Navigate to="/home" /> : <ForgetPassword />}
-        />
-        <Route path="/how-it-works" element={<HowItWorks />} />
-
-        {/* Protected Routes */}
-        <Route
-          path="/home"
-          element={
-            <ProtectedRoute>
-              <HomePage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="questions/:question_id"
-          element={
-            <ProtectedRoute>
-              <QuestionDetail />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/ask"
-          element={
-            <ProtectedRoute>
-              <AskQuestion />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/questions/update/:question_id"
-          element={
-            <ProtectedRoute>
-              <EditQuestion />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/answer/update/:answer_id"
-          element={
-            <ProtectedRoute>
-              <EditAnswer />
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
+      <div className="app-content">
+        <Routes>
+          <Route
+            path="/"
+            element={token ? <Navigate to="/home" /> : <LandingPage />}
+          />
+          <Route
+            path="/users/login"
+            element={token ? <Navigate to="/home" /> : <Login />}
+          />
+          <Route
+            path="/users/register"
+            element={token ? <Navigate to="/home" /> : <SignUp />}
+          />
+          <Route
+            path="/forget-password"
+            element={token ? <Navigate to="/home" /> : <ForgetPassword />}
+          />
+          <Route path="/how-it-works" element={<HowItWorks />} />
+          {/* Protected Routes */}
+          <Route
+            path="/home"
+            element={
+              <ProtectedRoute>
+                <HomePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="questions/:question_id"
+            element={
+              <ProtectedRoute>
+                <QuestionDetail />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/ask"
+            element={
+              <ProtectedRoute>
+                <AskQuestion />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/questions/update/:question_id"
+            element={
+              <ProtectedRoute>
+                <EditQuestion />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/answer/update/:answer_id"
+            element={
+              <ProtectedRoute>
+                <EditAnswer />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </div>
       <Footer />
     </div>
   );
