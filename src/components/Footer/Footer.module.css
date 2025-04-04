@@ -1,7 +1,7 @@
 /* Footer styles */
 .footer {
   background-color: #23262a;
-  /* min-height: 80px; */
+  min-height: 8rem;
   color: #c1c1c1;
   display: flex;
   align-items: center;
