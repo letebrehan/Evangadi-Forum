@@ -124,6 +124,7 @@ button:disabled {
   line-height: 1;
 }
 .terms {
+  text-align: left;
   padding: 1rem 0.5rem;
 }
 

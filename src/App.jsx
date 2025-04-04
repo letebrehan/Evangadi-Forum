@@ -80,9 +80,8 @@ function App() {
   }
 
   return (
-    <>
+    <div div className="app-wrapper">
       <Header />
-
       <Routes>
         <Route
           path="/"
@@ -145,7 +144,7 @@ function App() {
         />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 

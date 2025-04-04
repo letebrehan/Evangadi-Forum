@@ -97,9 +97,12 @@ button:disabled {
   font-weight: bold;
   margin: 10px 0;
 }
+.registerLink{
+  padding: 1rem 0;
+}
 
 .forgot__password {
-  text-align: center;
+  text-align: left;
   margin: 10px;
   font-size: 16px;
 }

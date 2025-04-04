@@ -106,7 +106,7 @@ function Login() {
             </button>
           </form>
 
-          <h3 >
+          <h3 className={styles.registerLink}>
             Don't have an account?{" "}
             <Link
               className={styles["text-pr"]}
