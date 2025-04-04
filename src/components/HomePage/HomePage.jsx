@@ -175,12 +175,12 @@ const Home = () => {
                       <ul className={styles.tagList}>
                         {question?.tags?.map((tag) => (
                           <li key={tag} className={styles.tagItem}>
-                            <a
+                            <Link
                               href={`/questions/tagged/${tag}`}
                               className={styles.tag}
                             >
                               {tag}
-                            </a>
+                            </Link>
                           </li>
                         ))}
                       </ul>

@@ -9,6 +9,7 @@ import { UserContext } from "../../context/UserProvider";
 import axiosInstance from "../../API/axios";
 import { IoIosArrowDropright } from "react-icons/io";
 import { v4 as uuidv4 } from "uuid";
+import { Link } from "react-router-dom";
 function AskQuestion() {
   const {
     register,
@@ -144,7 +145,7 @@ function AskQuestion() {
       <div className={styles.askQuestion}>
         <h2 className={styles.heading}>Ask a public question</h2>
         {successful && (
-          <a href="/home">
+          <Link to="/home">
             <div className={styles.successMessage}>
               <small className={styles.successText}>
                 Question posted successfully. Click Here to redirect to Question
@@ -152,7 +153,7 @@ function AskQuestion() {
               </small>
               <IoIosArrowDropright color="green" size={25} />
             </div>
-          </a>
+          </Link>
         )}
 
         <form onSubmit={handleSubmit(handleClick)} className={styles.form}>
