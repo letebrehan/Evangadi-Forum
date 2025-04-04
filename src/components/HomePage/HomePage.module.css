@@ -352,6 +352,7 @@
     }
     .time {
         top: 20%;
+        font-size: .8rem;
     }
     .btnContainer {
         /* position: relative; */
@@ -381,7 +382,7 @@
     position: absolute;
     top: -50%;
     left: 10%;
-    font-size: .8rem;
+    font-size: .6rem;
 }
 .descriptionDiv {
     font-size: .5rem !important;
