@@ -65,7 +65,6 @@ function Register() {
         password: "",
       });
       navigate("/users/login");
-      console.log(response);
     } catch (error) {
       setError(
         error.response ? error.response.data.msg : "Something went wrong!"

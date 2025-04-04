@@ -37,34 +37,6 @@ async function handleSubmit(e) {
   }
 }
 
-
-//   async function handleSubmit(e) {
-//     e.preventDefault();
-//     const emailValue = emailDom.current.value.trim(); // Trim whitespace
-
-//     // Input validation
-//     if (!emailValue) {
-//       setError("An email is required");
-//       return;
-//     }
-
-//     setLoading(true);
-//     try {
-//       const response = await axiosInstance.post("/users/forget-password", {
-//         email: emailValue,
-//       });
-
-//       setLoading(false);
-//       navigate("/users/login"); // Redirect to login page after successful reset
-//     } catch (err) {
-//       setLoading(false);
-//       setError(
-//         err.response?.data?.msg || "Something went wrong, please try again."
-//       );
-//       console.error("Error:", err.response?.data?.msg || err.message);
-//     }
-//   }
-
   return (
     <section className={Style.container}>
       <div className={Style.card}>

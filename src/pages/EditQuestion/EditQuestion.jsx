@@ -121,8 +121,8 @@ const EditQuestion = () => {
         )
       );
       navigate(`/questions/${question_id}`);
-    } catch {
-      console.error("Failed to update question.");
+    } catch (err) {
+      console.error(err.message);
     }
   };
 

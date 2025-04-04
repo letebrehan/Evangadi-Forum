@@ -26,14 +26,11 @@ function EditAnswer() {
         const response = await axiosInstance.get(`/answer/${answer_id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
-        console.log(response);
         const sanitizedContent = DOMPurify.sanitize(response.data.answer.answer);
-        console.log(sanitizedContent);
         setEditorContent(sanitizedContent);
         setOriginalContent(sanitizedContent);
         setLoading(false);
       } catch (err) {
-        console.log(err.message);
         setError("Failed to load answer data.");
         setLoading(false);
       }
@@ -68,21 +65,6 @@ function EditAnswer() {
       });
     }
   }, [editorContent]);
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     await axiosInstance.put(
-  //       /answers/update/${answer_id},
-  //       { answer: editorContent },
-  //       { headers: { Authorization: Bearer ${token} } }
-  //     );
-  //     navigate(-1);
-  //   } catch (err) {
-  //     console.log(err.message);
-  //     setError("Failed to update answer.");
-  //   }
-  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();

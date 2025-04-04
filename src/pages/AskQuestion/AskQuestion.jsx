@@ -94,7 +94,6 @@ function AskQuestion() {
     description = sanitizeContent(description);
     const question_id = uuidv4();
     setLoading(true);
-    console.log(user);
     try {
       await axiosInstance.post(
         "/questions/post-question",

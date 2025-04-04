@@ -41,7 +41,7 @@ function QuestionDetail() {
         setAnswer(answers.data.answers);
         setLoading(false);
       } catch (error) {
-        console.log(error);
+        console.log(error.message);
         setLoading(false);
       }
     };
@@ -75,7 +75,7 @@ function QuestionDetail() {
           ]);
           setLoading(false);
         } catch (error) {
-          console.error("Error fetching question:", error);
+          console.error("Error:", error.message);
           // Display a user-friendly message
           alert(
             "Something went wrong while fetching the question. Please try again later."
@@ -166,7 +166,7 @@ function QuestionDetail() {
       answer = sanitizeContent(answer);
 
       if (!question_id || !user?.user_id) {
-        console.error("Missing required data:", { question_id, user });
+        // console.error("Missing required data:", { question_id, user });
         setLoading(false);
         return;
       }
@@ -197,7 +197,7 @@ function QuestionDetail() {
       }
     } catch (error) {
       console.error(
-        "Error posting answer:",
+        "Error:",
         error.response?.data || error.message
       );
       setLoading(false);
@@ -215,7 +215,7 @@ function QuestionDetail() {
       const user_id = user?.user_id;
 
       if (!user_id) {
-        console.error("User not logged in.");
+        // console.error("User not logged in.");
         setLoading(false);
         return;
       }
@@ -227,8 +227,6 @@ function QuestionDetail() {
         setLoading(false);
         return;
       }
-      // console.log(answer);
-      // const answerToDelete = answer.find((ans) => ans.answer_id === answer_id);
 
       const response = await axiosInstance.delete(
         `/answer/delete/${answer_id}`,
@@ -238,14 +236,13 @@ function QuestionDetail() {
         }
       );
 
-      console.log("Delete response:", response.data);
 
       setAnswer((prevAnswers) =>
         prevAnswers.filter((answer) => answer.answer_id !== answer_id)
       );
       setLoading(false);
     } catch (err) {
-      console.error("Error deleting answer:", err);
+      console.error("Error deleting answer:", err.message);
       setLoading(false);
     }
   };
