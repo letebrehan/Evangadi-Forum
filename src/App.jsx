@@ -80,7 +80,7 @@ function App() {
   }
 
   return (
-    <div div className="app-wrapper">
+    <div div className="app-layout">
       <Header />
       <div className="app-content">
         <Routes>
