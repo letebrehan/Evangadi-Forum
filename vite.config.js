@@ -5,4 +5,8 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   base: "/Evangadi-Forum",
   plugins: [react()],
+   build: {
+    chunkSizeWarningLimit: 1000,  // Set the limit to 1000 kB (default is 500 kB)
+  },
 });
+
